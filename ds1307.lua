@@ -3,16 +3,16 @@ local Nom_du_module = ...
 local M = {}
 _G[Nom_du_module] = M
 
-local function decToBcd(valeur)
+local function decToBcd(val)
 
-	return((valeur/10*16) + (valeur%10))
+	return((((val/10) - ((val/10)%1)) *16) + (val%10))
 
 end
 
-local function bcdToDec(valeur)
+local function bcdToDec(val)
 
-	return((valeur/16*10) + (valeur%16))
-	
+	return((((val/16) - ((val/16)%1)) *10) + (val%16))
+
 end
 
 function M.init(d, l, a)
